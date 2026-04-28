@@ -1,4 +1,4 @@
-{{ config(materialized='view')}}
+{{ config(materialized='view', tags=['daily'])}}
 select
 address,
 block_number,
