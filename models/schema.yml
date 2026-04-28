@@ -43,6 +43,7 @@ models:
     versions:
     
       - v: 1
+        deprecation_date: 2030-01-01
     
       - v: 2
         columns:
