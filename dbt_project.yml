@@ -25,6 +25,10 @@ models:
       +tags:
         - powerbi
         - report
+      stablecoin_activity_per_day:
+        +post-hook:
+            - GRANT USAGE ON DATABASE DBT TO ROLE TESTER;
+            - GRANT USAGE ON SCHEMA DBT.DBT_AZIZ TO ROLE TESTER;
 
 vars:
   token_address_var: '0x50327c6c5a14dcade707abad2e27eb517df87ab5'
