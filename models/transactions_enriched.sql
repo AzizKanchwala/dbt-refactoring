@@ -1,4 +1,4 @@
-{{ config(materialized='view') }}
+{{ config(materialized='incremental', incremental_strategy='append')}}
 select
 
 t.hash,
@@ -30,3 +30,7 @@ left join (
 	) tt
 
 on t.hash = tt.transaction_hash
+
+{% if is_incremental() %}
+where date >= (select max(date) from {{ this }} )
+{% endif %}
