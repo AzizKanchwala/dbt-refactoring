@@ -4,6 +4,7 @@ select
 distinct
 token_address
 from {{ref('stg_token_transfers')}}
+limit 10
 {% endset %}
 
 {% if execute %}
@@ -13,5 +14,11 @@ from {{ref('stg_token_transfers')}}
 {% set result_lits = [] %}
 {% endif %}
 
-{{ log(result_list, info = True ) }}
+{% set sql = [] %}
+{% for i in result_list %}
+{% do sql.append("'"~i~"'") %}
+{% endfor %}
+
+{{ log(sql | join(', '), info = True) }}
+{{ return(sql | join(', '))}}
 {% endmacro %}
