@@ -18,3 +18,4 @@ t.date,
 t.token_address,
 s.type,
 s.symbol
+-- comment any field, add a new one or change the data type - the compilation of this model will then fail because of contracts
