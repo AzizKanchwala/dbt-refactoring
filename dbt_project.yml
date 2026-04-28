@@ -21,3 +21,7 @@ models:
   eth_dbt_cert_prep:
     +materialized: table
     +tags: ["eth", "crypto"]
+    marts:
+      +tags:
+        - powerbi
+        - report
