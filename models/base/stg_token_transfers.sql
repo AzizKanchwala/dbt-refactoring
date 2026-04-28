@@ -1,3 +1,4 @@
+{{ config(tags=['stablecoin'])}}
 select
 transaction_hash,
 date,
