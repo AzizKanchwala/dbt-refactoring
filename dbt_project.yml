@@ -3,6 +3,9 @@ version: '1.0.0'
 
 profile: 'eth_dbt_cert_prep'
 
+flags:
+	fail_fast: true
+
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
