@@ -13,6 +13,13 @@ models:
           - unique
           - not_null
 
+  - name: stg_transactions_enriched
+    columns:
+      - name: value
+        data_tests:
+          - assert_value_amount_positive:
+              field: block_number
+
   - name: stablecoin_activity_per_day
     latest_version: 1
     config:
@@ -31,6 +38,9 @@ models:
       - name: type
         data_type: varchar
         description: ""
+        data_tests:
+          - accepted_values:
+              values: ['Hybrid', 'Crypto-backed', 'Fiat-backed']
 
       - name: symbol
         data_type: varchar
