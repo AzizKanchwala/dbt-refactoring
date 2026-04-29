@@ -46,9 +46,9 @@ jobs:
       - name: Run dbt seed
         run: dbt seed --target ci
 
-      - name: Create state manifest from master
+      - name: Create state manifest from main
         run: |
-          git checkout master
+          git checkout main
           dbt deps
           dbt parse --target prod
           mkdir -p state
