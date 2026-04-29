@@ -10,4 +10,14 @@ eth_dbt_cert_prep:
       type: snowflake
       user: alif
       warehouse: COMPUTE_WH
+    prod:
+      account: lngyjcn-wr36723
+      database: PROD
+      private_key_path: "{{ env_var('DBT_PRIVATE_KEY_PATH') }}"
+      role: ACCOUNTADMIN
+      schema: PROD_SCHEMA
+      threads: 1
+      type: snowflake
+      user: alif
+      warehouse: COMPUTE_WH    
   target: ci
